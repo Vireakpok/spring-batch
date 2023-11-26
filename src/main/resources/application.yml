@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://64.176.199.178:3306/quartz_demo?allowPublicKeyRetrieval=true&useSSL=false
+    username: admin
+    password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+  batch:
+    jdbc:
+      schema: classpath:batch/sql/batch-table-mysql.sql
+      initialize-schema: always
+    job:
+      enabled: false
